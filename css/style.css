@@ -1,0 +1,575 @@
+:root{
+    --main-color:#343434;
+    --second-color:#fff;
+    --third-color: #F7F7F7;
+    --head-font:'Montserrat', sans-serif;
+    --main-font:"Poppins", sans-serif;
+    scroll-behavior: auto;
+}
+
+
+body{font-family: var(--main-font);
+
+overflow: hidden;}
+h1,h2,h3,h4,h5,h6,.logo{font-family: var(--head-font);}
+p,span{color:#748182;}
+h3{font-weight: 900;}
+ul li{
+    list-style-type: none;
+}
+
+
+/* ================Navbar========= */
+.scrollButton{
+    width: 30px;
+    height: 30px;
+    background-color: #869791;
+    border-radius: 50%;
+    padding: 10px 10px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.loading{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #748182;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 4px solid #FFF;
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  .loader::after {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border-left: 4px solid #FF3D00;
+    border-bottom: 4px solid transparent;
+    animation: rotation 0.5s linear infinite reverse;
+  }
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+
+.navbar{
+    background-color: rgba(0, 0, 0, .2);
+    transition: background-color 1s;
+}
+#navbar  a{
+    text-transform: capitalize;
+    color: var(--second-color) !important;
+    
+}
+
+#navbar .logo{
+    font-weight: 800;
+}
+#navbar .nav-item .nav-link{
+   position: relative;
+   overflow: hidden;
+   margin: 10px;
+}
+
+#navbar .nav-item .nav-link::after{
+   content: " ";
+   position: absolute;
+   left: -100%;
+   bottom: 5px;
+   height: 3px;
+   width: 80%;
+   background-color: var(--second-color);
+   transition: left 1s;
+}
+.sideBar{
+    position: fixed;
+    top: 30%;
+    left: 0;
+    z-index: 9999;
+    white-space: nowrap;
+}
+#innerSide{
+   background-color: #ccc;
+   padding: 10px;
+   display: none;
+
+}
+#icon{
+   background-color:orchid;
+   padding: 10px;
+   cursor: pointer;
+}
+.sideBar .box-color{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #09c;
+}
+#navbar .nav-item .nav-link.active::after{
+       left: 9%;
+}
+
+
+/* -----------\\\\\\\\home section------------\\\\\\\\\\ */
+#home{
+    background-image: url(../images/bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+#home .home-context h5{
+   font-weight: 900;
+    color: var(--second-color);
+
+
+}
+#home .home-context h1{
+    font-weight: 500;
+     color: var(--second-color);
+ 
+ }
+#home .home-overlay{
+    height: 100%;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+
+#home .home-context .home-animation{
+   
+    font-size: 40px;
+    font-weight: bold;
+    padding: 10px 5px;
+}
+
+#home .home-context .home-animation h1::after{
+      content: "|";
+      height: 5px;
+      width: 3px;
+      animation: typing 2s infinite alternate;
+     
+}
+#home .home-social .social-icon{
+    margin-right: 5px;
+    font-size: 15px;
+    background-color:rgba(0, 0, 0, .3);
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+   
+}
+
+#home .home-social .social-icon i{
+  color: var(--second-color);
+
+}
+@keyframes typing {
+    0%{content: "|";}
+    1%{content: "D|";}
+    2%{content: "De|";}
+    3%{content: "Des|";}
+    4%{content: "Desi|";}
+    5%{content: "Desig|";}
+    6%{content: "Design|";}
+    7%{content: "Designe|";}
+    8%{content: "Designer|";}
+    9%{content: "Designer|";}
+    10%{content: "Designer|";}
+    11%{content: "Designe|";}
+    12%{content: "Design|";}
+    13%{content: "Desig|";}
+    14%{content: "Desi|";}
+    15%{content: "Des|";}
+    16%{content: "De|";}
+    17%{content: "D|";}
+    18%{content: "|";}
+    19%{content: "D|";}
+    20%{content: "De|";}
+    21%{content: "Dev|";}
+    22%{content: "Deve|";}
+    23%{content: "Devel|";}
+    24%{content: "Develo|";}
+    25%{content: "Develop|";}
+    26%{content: "Develope|";}
+    27%{content: "Developer|";}
+    28%{content: "Developer|";}
+    29%{content: "Developer|";}
+    30%{content: "Develope|";}
+    31%{content: "Develop|";}
+    32%{content: "Develo|";}
+    33%{content: "Devel|";}
+    34%{content: "Deve|";}
+    35%{content: "Dev|";}
+    36%{content: "De|";}
+    38%{content: "D|";}
+    39%{content: "|";}
+    40%{content: "|";}
+    41%{content: "|";}
+    42%{content: "L|";}
+    43%{content: "La|";}
+    44%{content: "Lar|";}
+    45%{content: "Larr|";}
+    46%{content: "Larry|";}
+    47%{content: "Larry |";}
+    48%{content: "Larry D|";}
+    49%{content: "Larry Da|";}
+    50%{content: "Larry Dan|";}
+    51%{content: "Larry Dani|";}
+    52%{content: "Larry Danie|";}
+    53%{content: "Larry Daniel|";}
+    55%{content: "Larry Daniels|";}
+    56%{content: "Larry Daniels |";}
+    57%{content: "Larry Daniels |";}
+    58%{content: "Larry Daniels |";}
+    59%{content: "Larry Daniels |";}
+    60%{content: "Larry Daniels |";}
+    62%{content: "Larry Daniel|";}
+    64%{content: "Larry Danie|";}
+    66%{content: "Larry Dani|";}
+    68%{content: "Larry Dan|";}
+    70%{content: "Larry Da|";}
+    72%{content: "Larry D|";}
+    74%{content: "Larry |";}
+    76%{content: "Larry|";}
+    78%{content: "Larr|";}
+    80%{content: "Lar|";}
+    85%{content: "La|";}
+    90%{content: "L|";}
+    95%{content: "|";}
+    100%{content: "|";}
+}
+/*  Larry Daniels Developer Designer */
+
+
+/* ==========About Section Style================= */
+
+#about h3,#about .span-bold{
+    font-weight: 800;
+}
+#about .about-span{
+    color: #999;
+    letter-spacing: 2px;
+}
+#about .progress {
+    height: 20px;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15) inset;
+}
+#about .progress .skill-name{
+	text-transform: capitalize;
+	padding-top: 2px;
+	font-size: 15px;
+    font-weight: 100;
+}
+.progress  .progress-bar.bar-95{
+    width: 95%;
+}
+.progress  .progress-bar.bar-80{
+    width: 80%;
+}
+.progress  .progress-bar.bar-90{
+    width: 90%;
+}
+.progress  .progress-bar{
+    animation: animateBar 1s ease-in 1  ;
+  
+}
+
+@keyframes animateBar {
+    0% {transform: translateX(-100%);}
+    100% {transform: translateX(0);}
+}
+
+#about .btn-about .download:hover{
+   background-color: var(--second-color);
+   color: black;
+
+}
+#about .btn-about .download{
+    transition:all .5s;
+
+}
+#about .btn-about .contact-btn{
+  transition:all .5s;
+
+}
+#about .about-picture{position: relative;}
+#about .about-picture::after{
+    content: " ";
+    position: absolute;
+    left: 0px;
+    width: 80%;
+    bottom: -10px;
+    height:80%;
+    /* background-color: aqua; */
+    background-image: url(../images/dots.png);
+    background-repeat: repeat;
+    z-index: -1;
+}
+/* =============Style of Services Section============ */
+#services{
+    background-color:var(--third-color);
+}
+#services .service-content{
+    background-color: var(--second-color);
+    box-shadow: 0px 10px 30px -8px rgba(0, 0, 0, 0.1);
+}
+#services .service-content .service-des h6{
+    font-weight: 800;
+}
+
+#services .service-content .service-des .s-description p{
+    word-spacing: 2px;
+    font-weight: 100;
+}
+
+#services .service-content .ico-circle{
+    width: 4rem;;
+    height: 4rem;
+    background-color: var(--third-color);
+    transition:background-color .5s , color .5s;
+    
+}
+#services .service-content:hover .ico-circle{
+    background-color: black;
+    color: var(--second-color);
+       
+}
+/* ==========Style of Section's Heading============ */
+
+.section-head h3{
+    position: relative;
+    z-index: 1;
+}
+ .section-head h3::after{
+    content: "";
+    width: 100%;
+    height: 30px;
+    background-image: url(../images/dots.png);
+    background-repeat: repeat;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    z-index: -1;
+}
+/* ==============Portfolio Section==================== */
+
+#portfilio .portfilio-tabs .nav-item .nav-link{
+    color: black;
+    font-weight: 600;
+    margin-right: 5px;
+    position: relative;
+    overflow: hidden;
+    
+    
+}
+#portfilio .portfilio-tabs .nav-item .nav-link.active{
+    background-color:var(--second-color) !important;
+   
+}
+
+#portfilio .portfilio-tabs .nav-item .nav-link::after{
+   content: "";
+   width: 50%;
+   height: 3px;
+   background-color: black;
+   position: absolute;
+   bottom: 6px;
+   left: -100%;
+   transition: left 1s;
+}
+#portfilio .portfilio-tabs .nav-item .nav-link.active::after{
+   left: 20%;
+
+}
+
+#portfilio .tab-content .img-tab{
+    position: relative;
+    overflow: hidden;   
+}
+
+#portfilio .tab-content .img-tab .img-layer{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background: rgba(255, 255, 255, 0.95);
+    opacity: 0;
+    transition: all 0.5s;
+    transform: translateY(10px);
+      
+}
+
+
+
+#portfilio .tab-content .img-tab:hover .img-layer{
+    opacity: 1;
+    transform: translateY(0);  
+}
+#portfilio .tab-content .img-tab:hover .img-layer h6{
+    font-weight: 500;
+}
+
+
+#portfilio .tab-content .img-tab .img-layer .icons .icon-layer{
+  width: 2rem;
+  height: 2rem;
+}
+#portfilio .tab-content .img-tab .img-layer .icons .icon-layer:hover{
+      background-color: var(--second-color) !important;
+      
+  }
+#portfilio .tab-content .img-tab .img-layer .icons .icon-layer:hover i{
+                 color: black;
+}
+#portfilio .tab-content .img-tab .img-layer .icons .icon-layer i{
+      font-size: 15px;
+  
+}
+/* ===========================Testimonial style \\\\\\\\\\\\\\\\\\\\\\\\\*/
+
+#testmonial{
+    background-color:var(--third-color);
+}
+#testmonial #carouselExampleCaptions .carousel-inner .carousel-item .img-carasoul{
+      width: 10%;
+}
+
+#testmonial .carousel-indicators button{
+    width: 10px;
+    border-radius: 50%;
+    height: 10px;
+    background-color: gainsboro;
+}
+#testmonial .carousel-indicators button.active{
+    border-radius: 50%;
+    height: 10px;
+    background-color:#869791;
+}
+
+/* =================Our team Section============ */
+#team{
+    background-color: var(--third-color);
+}
+
+#team .card .card-body{
+    background-color: #5B5B5B;
+    color: var(--second-color);
+}
+#team .card .team-tab{
+    overflow: hidden;
+    position: relative;
+}
+
+#team .card .team-tab .team-layer{
+     position: absolute;
+     top: 5px;
+     left: 5px;
+     right: 5px;
+     bottom: 5px;
+     opacity: 0;
+     transform: rotateY(180deg);
+     background: rgba(255, 255, 255, 0.95);
+     transition: opacity 1s, transform 1s;    
+}
+
+#team .card:hover .team-layer{
+    opacity: 1;
+    transform: rotateY(0deg);
+}
+#team .card img{
+    transition:transform 1s;    
+
+}
+#team .card .team-tab:hover img{
+    transform: scale(1.5);
+}
+#team .card .team-tab .team-layer ul li{
+    margin-right: 5px;
+    font-size: 15px;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color:black;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s border, 1s background-color, 1s color;
+}
+#team .card .team-tab .team-layer ul li:hover{
+     border: 1px #748182 solid ;
+    background-color:var(--second-color);
+ 
+    
+}
+#team .card .team-tab .team-layer ul li:hover i{
+        color:black;
+}
+
+
+/* =========================Contact Style===================== */
+#contact .contact-box h6{
+    font-weight: 700;
+}
+
+#contact .contact-box .contact-ico{
+    width: 4rem;;
+    height: 4rem;
+    background-color: var(--third-color);
+    transition: 1s background-color, 1s color ;
+}
+#contact .contact-box .contact-ico:hover{
+   background-color: black;
+ 
+
+
+}
+#contact .contact-box .contact-ico:hover i{
+   color: var(--second-color) !important;
+ 
+ }
+ #contact .contact-form input, #contact .contact-form textarea{
+    box-shadow: none;
+    border: none;
+    background-color: var(--third-color);
+ }
+ #contact .contact-form button{
+    transition: 1s background-color, 1s color;
+ }
+ #contact .contact-form button:hover{
+    background-color: var(--second-color);
+    color: black;
+ }
+ #footer{
+    padding: 30px;
+ }
